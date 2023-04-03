@@ -61,6 +61,12 @@ function simplePurpleFace() {
   fill(255, 217, 114);
   ellipse(-3, -3, 3);
   ellipse( 3, -3, 3);
+  //pupils
+  fill(214, 122, 255);
+  ellipse(-3.75, -3, 1)
+  ellipse(2.5, -3, 1)
+  //mouth
+  ellipse(0,5,12,7);
 }
 
 /*
