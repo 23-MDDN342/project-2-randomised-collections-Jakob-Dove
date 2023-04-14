@@ -88,6 +88,7 @@ function draw () {
    let tilt_value = map(s1, 0, 100, -90, 90);
    let mouth_value = map(s2, 0, 100, 0.5, 10);
    let eye_value = int(map(s3, 0, 100, 1, 3));
+
    orangeAlienFace(tilt_value, eye_value, mouth_value);
   }
 
@@ -96,7 +97,16 @@ function draw () {
      blockyFace(s1);
   }
   if (mode == '3') {
-    simplePurpleFace();
+
+    let myeyeSize= map(s1, 0, 100, 2, 5)
+    let mouthValue = map(s4, 0, 100, 1, 7);
+    let Colourvalue = int(map(s5, 0, 100, 0, 4));
+  
+    simplePurpleFace(myeyeSize, mouthValue, Colourvalue);
+    
+    //try making more map sliders for other things!
+    //DOE SKETCHES FIRST, WHEN YOU RETURN!
+    //SKETCH OUT A NEW IDEA!
   }
 
   pop();

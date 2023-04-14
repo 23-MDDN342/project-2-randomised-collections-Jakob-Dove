@@ -52,21 +52,50 @@ function orangeAlienFace(tilt_value, eye_value, mouth_value) {
 }
 
 
-function simplePurpleFace() {
+function simplePurpleFace(eyeSize, mouthSize, colourArraynumer) {
+  let Red_color = color(255, 174, 174);
+  let Green_color = color(162, 252, 187);
+  let Blue_color = color(148, 157, 255);
+  let Yellow_color = color(255, 243, 199);
+  let Orange_color = color(255, 125, 125);
+
+ let Color_value = [Red_color,Green_color, Blue_color, Yellow_color, Orange_color] ;
+
+  let headSize = 20;
+  //let eyeSize = 5;
+  let centerX = 0;
+  let Iy = -4
+  let distactBetweenEyes = 5
+  let MouthDrop = 7
+  
   fill(234, 122, 244);
   noStroke();
   // head
-  ellipse(0, 0, 20);
+  ellipse(0, 0, headSize);
   // eyes
-  fill(255, 217, 114);
-  ellipse(-3, -3, 3);
-  ellipse( 3, -3, 3);
+  fill(Color_value[1]);
+  ellipse(-3, -3, eyeSize);
+  ellipse( 3, -3,eyeSize);
   //pupils
-  fill(214, 122, 255);
-  ellipse(-3.75, -3, 1)
-  ellipse(2.5, -3, 1)
+  fill(117, 122, 255);
+  ellipse(-4, -3.75, 1)
+  ellipse(2, -3.75, 1)
   //mouth
-  ellipse(0,5,12,7);
+  fill(117, 112, 255)
+  strokeWeight(1);
+  stroke(117, 112, 255);
+  console.log(Color_value)
+
+  arc(0, 3, mouthSize, mouthSize, 0, HALF_PI+HALF_PI, CHORD);
+  //Nose
+
+
+ 
+
+ ///Make try an arc for a mouth
+ // look up cmyk color palette
+ // triangle for  a nose
+ // try making eyebrows
 }
 
 /*
