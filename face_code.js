@@ -73,7 +73,7 @@ function simplePurpleFace(eyeSize, mouthSize, colourArraynumer) {
   // head
   ellipse(0, 0, headSize);
   // eyes
-  fill(Color_value[1]);
+  fill(Color_value[colourArraynumer]);
   ellipse(-3, -3, eyeSize);
   ellipse( 3, -3,eyeSize);
   //pupils
