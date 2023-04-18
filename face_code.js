@@ -52,7 +52,7 @@ function orangeAlienFace(tilt_value, eye_value, mouth_value) {
 }
 
 
-function simplePurpleFace(eyeSize, mouthSize, colourArraynumer) {
+function simplePurpleFace(eyeSize, mouthSize, colourArraynumer, noseSize, noseSize2, noseSizeY, MouthCOlor) {
   let Red_color = color(255, 174, 174);
   let Green_color = color(162, 252, 187);
   let Blue_color = color(148, 157, 255);
@@ -60,6 +60,7 @@ function simplePurpleFace(eyeSize, mouthSize, colourArraynumer) {
   let Orange_color = color(255, 125, 125);
 
  let Color_value = [Red_color,Green_color, Blue_color, Yellow_color, Orange_color] ;
+ let Color2 = [Orange_color,Red_color,Green_color, Blue_color, Yellow_color,] ;
 
   let headSize = 20;
   //let eyeSize = 5;
@@ -67,13 +68,17 @@ function simplePurpleFace(eyeSize, mouthSize, colourArraynumer) {
   let Iy = -4
   let distactBetweenEyes = 5
   let MouthDrop = 7
+  let triX = 0.1;
+  let triX2 = -.1;
+  let triY = 0;
   
-  fill(234, 122, 244);
+  
   noStroke();
   // head
+  fill(Color_value[colourArraynumer]);
   ellipse(0, 0, headSize);
   // eyes
-  fill(Color_value[colourArraynumer]);
+  fill(234, 122, 244);
   ellipse(-3, -3, eyeSize);
   ellipse( 3, -3,eyeSize);
   //pupils
@@ -81,14 +86,15 @@ function simplePurpleFace(eyeSize, mouthSize, colourArraynumer) {
   ellipse(-4, -3.75, 1)
   ellipse(2, -3.75, 1)
   //mouth
-  fill(117, 112, 255)
+  fill(Color2[MouthCOlor])
   strokeWeight(1);
-  stroke(117, 112, 255);
-  console.log(Color_value)
+  stroke(Color2[MouthCOlor]);
+  // console.log(mouthSize)
 
   arc(0, 3, mouthSize, mouthSize, 0, HALF_PI+HALF_PI, CHORD);
   //Nose
-
+  noStroke();
+  triangle(0, noseSizeY, noseSize2, 0, noseSize, 0)
 
  
 
