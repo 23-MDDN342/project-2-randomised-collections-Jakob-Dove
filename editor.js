@@ -99,14 +99,19 @@ function draw () {
   if (mode == '3') {
 
     let myeyeSize= map(s1, 0, 100, 2, 5);
-    let Xvalue = map(s2, 0, 100, 0, 2.5)
-    let Xvalue2 = map(s3, 0, 100, -5, -0.1)
+    let Xvalue = map(s2, 0, 100, 0, 3);
+    let Xvalue2 = map(s3, 0, 100, -5, -0.1);
     let Yvalue = map(s4, 0, 100, 0, 4);
     let mouthValue = map(s5, 0, 100, 1, 7);
     let Colourvalue = int(map(s6, 0, 100, 0, 4));
     let Colorvalue2 = int(map(s7, 0, 100, 0, 4));
+    let arcarray = int(map(s8, 0, 100, 0, 3));
+    let ArcArray2 = int(map(s9, 0, 100, 0, 2));
+    let modes = int(map(s10, 0, 100, 0, 2));
+    
+    
   
-    simplePurpleFace(myeyeSize, mouthValue, Colourvalue, Xvalue, Xvalue2, Yvalue, Colorvalue2);
+    simplePurpleFace(myeyeSize, mouthValue, Colourvalue, Xvalue, Xvalue2, Yvalue, Colorvalue2, arcarray, ArcArray2, modes);
     
     //try making more map sliders for other things!
     //DOE SKETCHES FIRST, WHEN YOU RETURN!

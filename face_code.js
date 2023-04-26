@@ -52,15 +52,31 @@ function orangeAlienFace(tilt_value, eye_value, mouth_value) {
 }
 
 
-function simplePurpleFace(eyeSize, mouthSize, colourArraynumer, noseSize, noseSize2, noseSizeY, MouthCOlor) {
+function simplePurpleFace(eyeSize, mouthSize, colourArraynumer, noseSize, noseSize2, noseSizeY, MouthCOlor, moutharray, Arc_Start, Arcmodes) {
+  
+
   let Red_color = color(255, 174, 174);
   let Green_color = color(162, 252, 187);
   let Blue_color = color(148, 157, 255);
   let Yellow_color = color(255, 243, 199);
   let Orange_color = color(255, 125, 125);
 
- let Color_value = [Red_color,Green_color, Blue_color, Yellow_color, Orange_color] ;
- let Color2 = [Orange_color,Red_color,Green_color, Blue_color, Yellow_color,] ;
+  let Red_color2 = color(255, 100, 100);
+  let Green_color2 = color(135, 230, 189);
+  let Blue_color2 = color(131, 152, 238);
+  let Yellow_color2 = color(255, 226, 122);
+  let Orange_color2 = color(232, 121, 102);
+
+  let halfpiArc = HALF_PI + HALF_PI;
+  let QuarterArc = QUARTER_PI + PI;
+
+  let Arc_value = [HALF_PI, QUARTER_PI, PI, TWO_PI];
+  let ArcInbetweens = [halfpiArc, QuarterArc, PI];
+
+  let Arcmode = [PIE, OPEN, CHORD];
+
+ let Color_value = [Red_color,Green_color, Blue_color, Yellow_color, Orange_color];
+ let Color2 = [Red_color2,Green_color2, Blue_color2, Yellow_color2, Orange_color2];
 
   let headSize = 20;
   //let eyeSize = 5;
@@ -85,17 +101,23 @@ function simplePurpleFace(eyeSize, mouthSize, colourArraynumer, noseSize, noseSi
   fill(117, 122, 255);
   ellipse(-4, -3.75, 1)
   ellipse(2, -3.75, 1)
-  //mouth
-  fill(Color2[MouthCOlor])
-  strokeWeight(1);
-  stroke(Color2[MouthCOlor]);
-  // console.log(mouthSize)
 
-  arc(0, 3, mouthSize, mouthSize, 0, HALF_PI+HALF_PI, CHORD);
+   //mouth
+   fill(Color2[MouthCOlor]);
+   strokeWeight(1);
+   stroke(Color2[MouthCOlor]);
+   // console.log(mouthSize)
+ 
+  
+   arc(noseSize2, eyeSize, eyeSize, mouthSize, ArcInbetweens[Arc_Start], Arc_value[moutharray], Arcmode[Arcmodes]);
+   
   //Nose
   noStroke();
-  triangle(0, noseSizeY, noseSize2, 0, noseSize, 0)
+  triangle(0, noseSizeY, noseSize2, 0, noseSize, 0);
 
+  
+
+  
  
 
  ///Make try an arc for a mouth
