@@ -2,6 +2,4 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10681103&assignment_repo_type=AssignmentRepo)
 ## 2023 MDDN342 Assignment 2: Randomised Collections
 
-Added deeper colors for the mouth and nose.  Than made Arrays for the stop of the arc and made an arc mode array.  to try and play around with the mouth.  I also made an arc beginning array as well! I don't where to go from here, unfortunately. 
-
-Made a whole bunch of new sliders.  3 of these move the pupils, 3 of these move the eyes, rotate the arc as a smile and the height of the arc.  which gives a lot more functionality to the face.  I think now is the time to start adding these to face mode 1 and 2.  
+Made a whole bunch of new sliders.  3 of these move the pupils, 3 of these move the eyes, rotate the arc as a smile and the height of the arc.  which gives a lot more functionality to the face.  I think now is the time to start adding these to face mode 1 and 2.  I think I am a little behind, seeing as how I am halfway into making the second face.

@@ -67,7 +67,7 @@ function setup () {
   faceSelector.option('1');
   faceSelector.option('2');
   faceSelector.option('3');
-  faceSelector.value('3');
+  faceSelector.value('1');
   faceSelector.parent('selector1Container');
 }
 
@@ -117,8 +117,19 @@ function draw () {
    let tilt_value = map(s1, 0, 100, -90, 90);
    let mouth_value = map(s2, 0, 100, 0.5, 10);
    let eye_value = int(map(s3, 0, 100, 1, 3));
+   let TriXvalue = map(s4, 0, 100, 0, 3);
+   let TriXvalue2 = map(s5, 0, 100, -3, -0.1);
+   let TriYvalue = map(s6, 0, 100, 0, 3);
+   let mouthWidth = map(s7, 0, 100, 1, 7);
+   let Colourvalue = int(map(s8, 0, 100, 0, 4));
+   let Colorvalue2 = int(map(s9, 0, 100, 0, 4));
+   let arcarray = int(map(s10, 0, 100, 0, 3));
+   let ArcArray2 = int(map(s11, 0, 100, 0, 2));
+   let modes = int(map(s12, 0, 100, 0, 2));
+   let arcHeight = map(s13, 0, 100, 0, 10);
+   
 
-   orangeAlienFace(tilt_value, eye_value, mouth_value);
+   orangeAlienFace(tilt_value, eye_value, mouth_value, TriXvalue, TriXvalue2, TriYvalue, mouthWidth, Colourvalue, Colorvalue2, arcarray, ArcArray2, modes, arcHeight);
   }
 
   if (mode == '2') {
