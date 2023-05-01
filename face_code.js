@@ -52,7 +52,7 @@ function orangeAlienFace(tilt_value, eye_value, mouth_value) {
 }
 
 
-function simplePurpleFace(eyeSize, mouthSize, colourArraynumer, noseSize, noseSize2, noseSizeY, MouthCOlor, moutharray, Arc_Start, Arcmodes) {
+function simplePurpleFace(eyeSize, mouthSize, colourArraynumer, noseCoordX, noseCoordX2, noseCoordY, MouthCOlor, moutharray, Arc_Start, Arcmodes, Mouthrotate, EyeXCord,EyeXCord2, EyeYCord, pupilX, pupilX2, pupilY, arcHeight) {
   
 
   let Red_color = color(255, 174, 174);
@@ -95,25 +95,29 @@ function simplePurpleFace(eyeSize, mouthSize, colourArraynumer, noseSize, noseSi
   ellipse(0, 0, headSize);
   // eyes
   fill(234, 122, 244);
-  ellipse(-3, -3, eyeSize);
-  ellipse( 3, -3,eyeSize);
+  ellipse(EyeXCord, EyeYCord, eyeSize);
+  ellipse( EyeXCord2, EyeYCord,eyeSize);
+  
   //pupils
   fill(117, 122, 255);
-  ellipse(-4, -3.75, 1)
-  ellipse(2, -3.75, 1)
+  ellipse(pupilX, pupilY, 1)
+  ellipse(pupilX2, pupilY, 1)
 
    //mouth
    fill(Color2[MouthCOlor]);
    strokeWeight(1);
    stroke(Color2[MouthCOlor]);
-   // console.log(mouthSize)
- 
-  
-   arc(noseSize2, eyeSize, eyeSize, mouthSize, ArcInbetweens[Arc_Start], Arc_value[moutharray], Arcmode[Arcmodes]);
+   
+   push();
+   translate(-.5,6)
+   rotate(Mouthrotate)
+   arc(0, 0, mouthSize, arcHeight, ArcInbetweens[Arc_Start]+PI, Arc_value[moutharray] + PI, Arcmode[Arcmodes]);
+   console.log(Arcmodes)
+   pop();
    
   //Nose
   noStroke();
-  triangle(0, noseSizeY, noseSize2, 0, noseSize, 0);
+  triangle(0, noseCoordY, noseCoordX2, 0, noseCoordX, 0);// make an if statement to make sure the nose does not go to low
 
   
 

@@ -6,7 +6,9 @@ const canvasWidth = 960;
 const canvasHeight = 500;
 const bg_color = [71, 222, 219];
 let slider1, slider2, slider3, slider4, slider5;
-let slider6, slider7, slider8, slider9, slider10;
+let slider6, slider7, slider8, slider9, slider10; 
+let slider11, slider12, slider13, slider14, slider15;
+let slider16, slider18, slider17;
 let faceSelector;
 let faceGuideCheckbox;
 
@@ -27,6 +29,16 @@ function setup () {
   slider8 = createSlider(0, 100, 50);
   slider9 = createSlider(0, 100, 50);
   slider10 = createSlider(0, 100, 50);
+  slider11 = createSlider(0, 100, 50);
+  slider12 = createSlider(0, 100, 50);
+  slider13 = createSlider(0, 100, 50);
+  slider14 = createSlider(0, 100, 50);
+  slider15 = createSlider(0, 100, 50);
+  slider16 = createSlider(0, 100, 50);
+  slider17 = createSlider(0, 100, 50);
+  slider18 = createSlider(0, 100, 50);
+  
+
 
   slider1.parent('slider1Container');
   slider2.parent('slider2Container');
@@ -38,6 +50,15 @@ function setup () {
   slider8.parent('slider8Container');
   slider9.parent('slider9Container');
   slider10.parent('slider10Container');
+  slider11.parent('slider11Container');
+  slider12.parent('slider12Container');
+  slider13.parent('slider13Container');
+  slider14.parent('slider14Container');
+  slider15.parent('slider15Container');
+  slider16.parent('slider16Container');
+  slider17.parent('slider17Container');
+  slider18.parent('slider18Container');
+  
 
   faceGuideCheckbox = createCheckbox('', false);
   faceGuideCheckbox.parent('checkbox1Container');
@@ -69,6 +90,14 @@ function draw () {
   let s8 = slider8.value();
   let s9 = slider9.value();
   let s10 = slider10.value();
+  let s11 = slider11.value();
+  let s12 = slider12.value();
+  let s13 = slider13.value();
+  let s14 = slider14.value();
+  let s15 = slider15.value();
+  let s16 = slider16.value();
+  let s17 = slider17.value();
+  let s18 = slider18.value();
 
   let show_face_guide = faceGuideCheckbox.checked();
 
@@ -99,23 +128,29 @@ function draw () {
   if (mode == '3') {
 
     let myeyeSize= map(s1, 0, 100, 2, 5);
-    let Xvalue = map(s2, 0, 100, 0, 3);
-    let Xvalue2 = map(s3, 0, 100, -5, -0.1);
-    let Yvalue = map(s4, 0, 100, 0, 4);
+    let TriXvalue = map(s2, 0, 100, 0, 3);
+    let TriXvalue2 = map(s3, 0, 100, -3, -0.1);
+    let TriYvalue = map(s4, 0, 100, 0, 3);
     let mouthValue = map(s5, 0, 100, 1, 7);
     let Colourvalue = int(map(s6, 0, 100, 0, 4));
     let Colorvalue2 = int(map(s7, 0, 100, 0, 4));
     let arcarray = int(map(s8, 0, 100, 0, 3));
     let ArcArray2 = int(map(s9, 0, 100, 0, 2));
     let modes = int(map(s10, 0, 100, 0, 2));
+    let Arcrotate = map(s11, 0, 100, -1, 6);
+    let eyeX = map(s12, 0, 100, -4, 0);
+    let eyeX2 = map(s13, 0, 100, 1, 4);
+    let eyeY = map(s14, 0, 100, -5, 0);
+    let pupilX = map(s15, 0, 100, 0, 5);
+    let pupilX2 = map(s16, 0, 100, -4, 0);
+    let pupilY = map(s17, 0, 100, -5, 0);
+    let arcHeight = map(s18, 0, 100, 0, 10);
     
     
   
-    simplePurpleFace(myeyeSize, mouthValue, Colourvalue, Xvalue, Xvalue2, Yvalue, Colorvalue2, arcarray, ArcArray2, modes);
+    simplePurpleFace(myeyeSize, mouthValue, Colourvalue, TriXvalue, TriXvalue2, TriYvalue, Colorvalue2, arcarray, ArcArray2, modes, Arcrotate, eyeX, eyeX2, eyeY, pupilX, pupilX2, pupilY, arcHeight);
     
-    //try making more map sliders for other things!
-    //DOE SKETCHES FIRST, WHEN YOU RETURN!
-    //SKETCH OUT A NEW IDEA!
+    
   }
 
   pop();
