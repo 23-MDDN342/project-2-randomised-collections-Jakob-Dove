@@ -13,32 +13,28 @@
  * eye_value is an integer number of eyes: either 0, 1, 2, or 3
  * mouth_value is how open the mouth is and should generally range from 0.5 to 10
  */
-function orangeAlienFace(tilt_value, eye_value, mouth_value, TriXvalue, TriXvalue2, TriYvalue, mouthWidth, Colourvalue, Colorvalue2, arcarray, ArcArray2, modes, arcHeight) {
-  const bg_color3 = [71, 222, 219];
-  const fg_color3 = [255, 93, 35];
+function EmoFace( FaceMode, eye_value, mouthWidth, Colourvalue, Colorvalue2, arcarray, ArcArray2, modes, arcHeight) {
+  
 
   let Red_color = color(255, 174, 174);
-  let Green_color = color(162, 252, 187);
+  // let Green_color = color(162, 252, 187);
   let Blue_color = color(148, 157, 255);
   let Yellow_color = color(255, 243, 199);
-  let Orange_color = color(255, 125, 125);
+  // let Orange_color = color(255, 125, 125);
 
   let Red_color2 = color(255, 100, 100);
-  let Green_color2 = color(135, 230, 189);
+  // let Green_color2 = color(135, 230, 189);
   let Blue_color2 = color(131, 152, 238);
   let Yellow_color2 = color(255, 226, 122);
-  let Orange_color2 = color(232, 121, 102);
-
-  let halfpiArc = 45 + 90;
-  let QuarterArc = 45 + 180;
+  // let Orange_color2 = color(232, 121, 102);
 
   let Arc_value = [45, 90, 180, 360];
-  let ArcInbetweens = [45, halfpiArc, QuarterArc, 180];
+  let ArcInbetweens = [45, 135, 180, 225];
 
   let Arcmode = [PIE, OPEN, CHORD];
 
- let Color_value = [Red_color,Green_color, Blue_color, Yellow_color, Orange_color];
- let Color2 = [Red_color2,Green_color2, Blue_color2, Yellow_color2, Orange_color2];
+  let Color_value = [Red_color, Blue_color, Yellow_color];
+  let Color2 = [Red_color2, Blue_color2, Yellow_color2];
 
   let headSize = 20
   let eyeSize = 5;
@@ -49,36 +45,69 @@ function orangeAlienFace(tilt_value, eye_value, mouth_value, TriXvalue, TriXvalu
   
   // rotation in degrees
   angleMode(DEGREES);
-  // rotate(tilt_value);
+  
 
- // head
-  noStroke();
-  fill(Color_value[Colourvalue]);
-  ellipse(centerX, 0, headSize, headSize);
-
-  // 2 traditonal eyes
-  if (eye_value === 1 || eye_value == 3) {
-    fill(bg_color3);
-    ellipse(centerX, Iy, eyeSize-1,eyeSize);
+  if(FaceMode === 0 || FaceMode === 1 || FaceMode === 2){
+    // head
+    noStroke();
+    fill(Color_value[FaceMode]);
+    ellipse(centerX, 0, headSize, headSize);
+  }
+  
+  if(FaceMode === 0){//Grumpy
+    fill(Color2[FaceMode]);
+    //eyes
+    
+    arc(-5, -3, 2, 3, 180, 360, CHORD);
+    arc( 5, -3, 2, 3, 180, 360, CHORD);
    
-  }
-// middle eye
-  if (eye_value >= 2) {
-    fill(bg_color3);
-    ellipse(centerX - distactBetweenEyes, Iy, eyeSize);
-    ellipse(centerX + distactBetweenEyes, Iy, eyeSize);
+    //nose
+    arc(0, 2, 2, 1, 180, 360, CHORD);
+    //Mouth
+    arc(0, 8, 8, 1, 180, 360, CHORD);
+    //eyebrows
+    stroke(Color2[FaceMode])
+    line(3,-5, 7, -6);
+    line(-3,-5, -7, -6);
+
   }
 
-  // mouth
-  // fill(bg_color3);
-  // ellipse(centerX, Iy + MouthDrop, distactBetweenEyes, mouth_value);
+  if(FaceMode === 1){//Gloomy
+    fill(Color2[FaceMode]);
+    //eyes
+    
+    arc(-5, -2, 6, 5, 180, 360, CHORD);
+    arc( 5, -2, 6, 5, 180, 360, CHORD);
+   
+    //nose
+    arc(0, 2, 5, 2, 180, 360, CHORD);
+    stroke(Color2[FaceMode]);
+    noFill();
+    strokeWeight(2)
+    //Mouth
+    arc(0, 8, 5, 5, 180, 360);
+    
 
-  push();
-  fill(Color2[Colorvalue2])
-  translate(0, 5);
-  rotate(tilt_value);
-  arc(0, 0, mouthWidth, arcHeight, ArcInbetweens[arcarray]+PI, Arc_value[ArcArray2] + PI, Arcmode[modes]);
-  pop();
+  }
+
+  if(FaceMode === 2){//Glad
+    fill(Color2[FaceMode]);
+    //eyes
+    
+    arc(-5, -3, 3, 5, 360, 0);
+    arc( 5, -3, 3, 5, 360, 0);
+   
+    //nose
+    arc(0, 2, 5, 2, 360, 0);
+    stroke(Color2[FaceMode]);
+    
+    //Mouth
+    arc(0, 5, 8, 8, 360, 180);
+    
+
+  }
+
+
 }
 
 
@@ -125,7 +154,7 @@ function simplePurpleFace(eyeSize, mouthSize, colourArraynumer, noseCoordX, nose
   
   noStroke();
   // head
-  fill(Color_value[colourArraynumer]);
+  fill(Color2[colourArraynumer]);
   ellipse(0, 0, headSize);
   // eyes
   fill(234, 122, 244);

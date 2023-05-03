@@ -4,7 +4,7 @@
 
 const canvasWidth = 960;
 const canvasHeight = 500;
-const bg_color = [71, 222, 219];
+const bg_color = [255, 255, 255];
 let slider1, slider2, slider3, slider4, slider5;
 let slider6, slider7, slider8, slider9, slider10; 
 let slider11, slider12, slider13, slider14, slider15;
@@ -114,22 +114,16 @@ function draw () {
   push();
   if (mode == '1') {
    // draw face using values mapped from 3 sliders
-   let tilt_value = map(s1, 0, 100, -90, 90);
-   let mouth_value = map(s2, 0, 100, 0.5, 10);
+   let FaceMode = int(map(s1, 0, 100, 0, 2));
    let eye_value = int(map(s3, 0, 100, 1, 3));
-   let TriXvalue = map(s4, 0, 100, 0, 3);
-   let TriXvalue2 = map(s5, 0, 100, -3, -0.1);
-   let TriYvalue = map(s6, 0, 100, 0, 3);
-   let mouthWidth = map(s7, 0, 100, 1, 7);
-   let Colourvalue = int(map(s8, 0, 100, 0, 4));
-   let Colorvalue2 = int(map(s9, 0, 100, 0, 4));
-   let arcarray = int(map(s10, 0, 100, 0, 3));
-   let ArcArray2 = int(map(s11, 0, 100, 0, 2));
-   let modes = int(map(s12, 0, 100, 0, 2));
-   let arcHeight = map(s13, 0, 100, 0, 10);
+   
+   let arcarray = int(map(s4, 0, 100, 0, 3));
+   let ArcArray2 = int(map(s5, 0, 100, 0, 2));
+   let modes = int(map(s6, 0, 100, 0, 2));
+   let arcHeight = map(s7, 0, 100, 0, 10);
    
 
-   orangeAlienFace(tilt_value, eye_value, mouth_value, TriXvalue, TriXvalue2, TriYvalue, mouthWidth, Colourvalue, Colorvalue2, arcarray, ArcArray2, modes, arcHeight);
+   EmoFace(FaceMode, eye_value, arcarray, ArcArray2, modes, arcHeight);
   }
 
   if (mode == '2') {

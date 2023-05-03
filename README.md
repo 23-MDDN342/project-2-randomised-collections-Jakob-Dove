@@ -2,4 +2,4 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10681103&assignment_repo_type=AssignmentRepo)
 ## 2023 MDDN342 Assignment 2: Randomised Collections
 
-Made a whole bunch of new sliders.  3 of these move the pupils, 3 of these move the eyes, rotate the arc as a smile and the height of the arc.  which gives a lot more functionality to the face.  I think now is the time to start adding these to face mode 1 and 2.  I think I am a little behind, seeing as how I am halfway into making the second face.
+Took a lot of code out.  Made if statements for each mode the facemode slider is in. Made a slider that controls which face is showing.  I might try and add one or two more faces.  I think arrangement code might be next. maybe a blend mode.
