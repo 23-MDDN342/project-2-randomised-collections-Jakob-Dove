@@ -7,8 +7,7 @@ const canvasHeight = 500;
 const bg_color = [255, 255, 255];
 let slider1, slider2, slider3, slider4, slider5;
 let slider6, slider7, slider8, slider9, slider10; 
-let slider11, slider12, slider13, slider14, slider15;
-let slider16, slider18, slider17;
+
 let faceSelector;
 let faceGuideCheckbox;
 
@@ -29,14 +28,7 @@ function setup () {
   slider8 = createSlider(0, 100, 50);
   slider9 = createSlider(0, 100, 50);
   slider10 = createSlider(0, 100, 50);
-  slider11 = createSlider(0, 100, 50);
-  slider12 = createSlider(0, 100, 50);
-  slider13 = createSlider(0, 100, 50);
-  slider14 = createSlider(0, 100, 50);
-  slider15 = createSlider(0, 100, 50);
-  slider16 = createSlider(0, 100, 50);
-  slider17 = createSlider(0, 100, 50);
-  slider18 = createSlider(0, 100, 50);
+ 
   
 
 
@@ -50,14 +42,7 @@ function setup () {
   slider8.parent('slider8Container');
   slider9.parent('slider9Container');
   slider10.parent('slider10Container');
-  slider11.parent('slider11Container');
-  slider12.parent('slider12Container');
-  slider13.parent('slider13Container');
-  slider14.parent('slider14Container');
-  slider15.parent('slider15Container');
-  slider16.parent('slider16Container');
-  slider17.parent('slider17Container');
-  slider18.parent('slider18Container');
+ 
   
 
   faceGuideCheckbox = createCheckbox('', false);
@@ -90,14 +75,7 @@ function draw () {
   let s8 = slider8.value();
   let s9 = slider9.value();
   let s10 = slider10.value();
-  let s11 = slider11.value();
-  let s12 = slider12.value();
-  let s13 = slider13.value();
-  let s14 = slider14.value();
-  let s15 = slider15.value();
-  let s16 = slider16.value();
-  let s17 = slider17.value();
-  let s18 = slider18.value();
+  
 
   let show_face_guide = faceGuideCheckbox.checked();
 
