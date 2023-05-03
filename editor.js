@@ -92,16 +92,11 @@ function draw () {
   push();
   if (mode == '1') {
    // draw face using values mapped from 3 sliders
-   let FaceMode = int(map(s1, 0, 100, 0, 2));
-   let eye_value = int(map(s3, 0, 100, 1, 3));
+   let FaceMode = int(map(s1, 0, 100, 0, 3));
    
-   let arcarray = int(map(s4, 0, 100, 0, 3));
-   let ArcArray2 = int(map(s5, 0, 100, 0, 2));
-   let modes = int(map(s6, 0, 100, 0, 2));
-   let arcHeight = map(s7, 0, 100, 0, 10);
    
 
-   EmoFace(FaceMode, eye_value, arcarray, ArcArray2, modes, arcHeight);
+   EmoFace(FaceMode);
   }
 
   if (mode == '2') {
