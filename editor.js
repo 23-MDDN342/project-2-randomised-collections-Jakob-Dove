@@ -92,7 +92,7 @@ function draw () {
   push();
   if (mode == '1') {
    // draw face using values mapped from 3 sliders
-   let FaceMode = int(map(s1, 0, 100, 0, 3));
+   let FaceMode = int(map(s1, 0, 100, 0, 4));
    
    
 
