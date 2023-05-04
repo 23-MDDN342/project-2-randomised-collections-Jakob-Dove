@@ -40,6 +40,8 @@ function EmoFace(FaceMode) {
   let eyeY = -3;
   let noseY = 2;
   let mouthY = 8;
+  let lineX = 3;
+  let lineX2 = -3;
   
   // rotation in degrees
   angleMode(DEGREES);
@@ -48,24 +50,26 @@ function EmoFace(FaceMode) {
   if(FaceMode === 0 || FaceMode === 1 || FaceMode === 2 || FaceMode === 3 || FaceMode === 4){
     // head
     noStroke();
-    fill(Color_value[FaceMode]);
+    fill(Color_value[FaceMode]);  // sets color
     ellipse(FaceX, 0, faceSize, faceSize);
   }
   
   if(FaceMode === 0){//Grumpy
 
-    fill(Color2[FaceMode]);
-    let arcwidth = 2;
-    let archeight = 3;
+    let arcwidth = 2; //variables
+    let archeight = 2;
+
     //eyes
-    
+    fill(Color2[FaceMode]);
     arc(eyeX, eyeY, arcwidth, archeight, 180, 360, CHORD);
     arc( eyeX2, eyeY, arcwidth, archeight, 180, 360, CHORD);
    
     //nose
     arc(ArcXval, noseY, arcwidth, 1, 180, 360, CHORD);
+
     //Mouth
     arc(ArcXval, mouthY, 8, 1, 180, 360, CHORD);
+
     //eyebrows
     stroke(Color2[FaceMode])
     line(3,-5, 7, -6);
@@ -101,29 +105,25 @@ function EmoFace(FaceMode) {
 
     fill(Color2[FaceMode]);
     //eyes
-    
     arc(eyeX, eyeY, 3, 5, 360, 0);
     arc( eyeX2, eyeY, 3, 5, 360, 0);
    
     //nose
     arc(ArcXval, noseY, 5, 2, 360, 0);
-    stroke(Color2[FaceMode]);
     
     //Mouth
+    stroke(Color2[FaceMode]);
     arc(ArcXval, mouthY, 8, 8, 360, 180);
-    
 
   }
 
   if(FaceMode === 3){//disgust
     let eyeX = -5;
     let eyeX2 = 4;
-
     let mouthY = 7;
 
     fill(Color2[FaceMode]);
     //eyes
-    
     arc(eyeX, eyeY, 2, 2, 360, 0);
     arc( eyeX2, eyeY, 2, 2, 360, 0);
    
@@ -144,20 +144,18 @@ function EmoFace(FaceMode) {
   if(FaceMode === 4){//confidence, or new emotion, still work in progress
     let eyeX = -5;
     let eyeX2 = 4;
-
     let mouthY = 7;
 
     fill(Color2[FaceMode]);
     //eyes
-
     arc(eyeX, eyeY, 2, 2, 360, 0);
     arc( eyeX2, eyeY, 2, 2, 360, 0);
    
     //nose
     arc(ArcXval, noseY, 1, 2, 360, 0);
-    stroke(Color2[FaceMode]);
     
     //Mouth
+    stroke(Color2[FaceMode]);
     noFill();
     arc(0, mouthY, 8, 1, 36, 180);
     
