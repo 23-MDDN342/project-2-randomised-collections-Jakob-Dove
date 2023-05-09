@@ -13,13 +13,15 @@
  * eye_value is an integer number of eyes: either 0, 1, 2, or 3
  * mouth_value is how open the mouth is and should generally range from 0.5 to 10
  */
-function EmoFace(FaceMode) {
+function EmoFace(FaceMode, Eyechange) {
   
-  let Red_color = color(255, 174, 174);
-  let Blue_color = color(148, 157, 255);
-  let Yellow_color = color(255, 243, 199);
-  let Green_color = color(162, 252, 187);
-  let Orange_color = color(255, 125, 125);
+  
+  
+  let Red_color = color(255, 174, 174, 100);
+  let Blue_color = color(148, 157, 255, 100);
+  let Yellow_color = color(255, 243, 199, 100);
+  let Green_color = color(162, 252, 187, 100);
+  let Orange_color = color(255, 145, 99, 100);
 
   let Red_color2 = color(255, 100, 100);
   let Blue_color2 = color(131, 152, 238);
@@ -61,8 +63,8 @@ function EmoFace(FaceMode) {
 
     //eyes
     fill(Color2[FaceMode]);
-    arc(eyeX, eyeY, arcwidth, archeight, 180, 360, CHORD);
-    arc( eyeX2, eyeY, arcwidth, archeight, 180, 360, CHORD);
+    arc(eyeX, eyeY, arcwidth+Eyechange, archeight+Eyechange, 180, 360, CHORD);
+    arc( eyeX2, eyeY, arcwidth+Eyechange, archeight+Eyechange, 180, 360, CHORD);
    
     //nose
     arc(ArcXval, noseY, arcwidth, 1, 180, 360, CHORD);
@@ -85,8 +87,8 @@ function EmoFace(FaceMode) {
     
     //eyes
     
-    arc(eyeX, eyeY, arcwidth, archeight, 180, 360, CHORD);
-    arc( eyeX2, eyeY, arcwidth, archeight, 180, 360, CHORD);
+    arc(eyeX, eyeY, arcwidth + Eyechange, archeight+Eyechange, 180, 360, CHORD);
+    arc( eyeX2, eyeY, arcwidth+Eyechange, archeight+Eyechange, 180, 360, CHORD);
    
     //nose
     arc(ArcXval, noseY, 5, 2, 180, 360, CHORD);
@@ -105,8 +107,8 @@ function EmoFace(FaceMode) {
 
     fill(Color2[FaceMode]);
     //eyes
-    arc(eyeX, eyeY, 3, 5, 360, 0);
-    arc( eyeX2, eyeY, 3, 5, 360, 0);
+    arc(eyeX, eyeY, 3+Eyechange, 5+Eyechange, 360, 0);
+    arc( eyeX2, eyeY, 3+Eyechange, 5+Eyechange, 360, 0);
    
     //nose
     arc(ArcXval, noseY, 5, 2, 360, 0);
@@ -124,8 +126,8 @@ function EmoFace(FaceMode) {
 
     fill(Color2[FaceMode]);
     //eyes
-    arc(eyeX, eyeY, 2, 2, 360, 0);
-    arc( eyeX2, eyeY, 2, 2, 360, 0);
+    arc(eyeX, eyeY, 2+Eyechange, 2+Eyechange, 360, 0);
+    arc( eyeX2, eyeY, 2+Eyechange, 2+Eyechange, 360, 0);
    
     //nose
     arc(ArcXval, noseY, 1, 2, 360, 0);
@@ -141,15 +143,15 @@ function EmoFace(FaceMode) {
     
   }
 
-  if(FaceMode === 4){//confidence, or new emotion, still work in progress
+  if(FaceMode === 4){//confidence
     let eyeX = -5;
     let eyeX2 = 4;
     let mouthY = 7;
 
     fill(Color2[FaceMode]);
     //eyes
-    arc(eyeX, eyeY, 2, 2, 360, 0);
-    arc( eyeX2, eyeY, 2, 2, 360, 0);
+    arc(eyeX, eyeY, 2+Eyechange, 2+Eyechange, 360, 0);
+    arc( eyeX2, eyeY, 2+Eyechange, 2+Eyechange, 360, 0);
    
     //nose
     arc(ArcXval, noseY, 1, 2, 360, 0);
