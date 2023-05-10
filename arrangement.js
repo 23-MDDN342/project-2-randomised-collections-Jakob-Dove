@@ -7,7 +7,7 @@ const canvasHeight = 500;
 let curRandomSeed = 0;
 
 
-let lastSwapTime = 0;
+let lastSwapTime = 1500;
 const millisPerSwap = 3000;
 
 function setup () {
@@ -15,7 +15,7 @@ function setup () {
   let main_canvas = createCanvas(canvasWidth, canvasHeight);
   main_canvas.parent('canvasContainer');
 
-  curRandomSeed = int(random(-15, 15));
+  curRandomSeed = int(random(-100, 100));
 
   // rotation in degrees
   angleMode(DEGREES);
@@ -46,13 +46,13 @@ function draw () {
   noStroke();
 
   // draw a 7x4 grid of faces
-  let w = canvasWidth / 5;
-  let h = canvasHeight / 5;
+  let w = canvasWidth/5 ;
+  let h = canvasHeight / 4;
   for(let i=0; i<4; i++) {
     for(let j=0; j<7; j++) {
-      let y = h/2 + h*i;
-      let x = w/2 + w*j;
-          let Eyechange = int(random(0,5));
+      let y = h/2 + j*60;
+      let x = w/2 + j*157 ;
+          let Eyechange = int(random(-1,5));
       
           push();
           translate(x, y);

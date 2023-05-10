@@ -17,11 +17,11 @@ function EmoFace(FaceMode, Eyechange) {
   
   
   
-  let Red_color = color(255, 174, 174, 100);
-  let Blue_color = color(148, 157, 255, 100);
-  let Yellow_color = color(255, 243, 199, 100);
-  let Green_color = color(162, 252, 187, 100);
-  let Orange_color = color(255, 145, 99, 100);
+  let Red_color = color(255, 174, 174);
+  let Blue_color = color(148, 157, 255);
+  let Yellow_color = color(255, 243, 199);
+  let Green_color = color(162, 252, 187);
+  let Orange_color = color(255, 145, 99);
 
   let Red_color2 = color(255, 100, 100);
   let Blue_color2 = color(131, 152, 238);
@@ -115,7 +115,7 @@ function EmoFace(FaceMode, Eyechange) {
     
     //Mouth
     stroke(Color2[FaceMode]);
-    arc(ArcXval, mouthY, 8, 8, 360, 180);
+    arc(ArcXval, mouthY, 8, 8, 360, 180, CHORD);
 
   }
 
@@ -126,18 +126,20 @@ function EmoFace(FaceMode, Eyechange) {
 
     fill(Color2[FaceMode]);
     //eyes
-    arc(eyeX, eyeY, 2+Eyechange, 2+Eyechange, 360, 0);
-    arc( eyeX2, eyeY, 2+Eyechange, 2+Eyechange, 360, 0);
+    arc(eyeX, eyeY, 1+Eyechange, 1+Eyechange, 360, 0);
+    arc( eyeX2, eyeY, 1+Eyechange, 1+Eyechange, 360, 0);
    
     //nose
     arc(ArcXval, noseY, 1, 2, 360, 0);
-    stroke(Color2[FaceMode]);
+    
     
     //Mouth
+    stroke(Color2[FaceMode]);
     noFill();
     arc(1, mouthY, 8, 1, 180, 225);
 
-    //eyebrows
+    //eyebrows 
+    strokeWeight(1);
     line(-5.2, -3.9, -3, -3.9);
     line(4, -3.9, 6.2, -3.9);
     
