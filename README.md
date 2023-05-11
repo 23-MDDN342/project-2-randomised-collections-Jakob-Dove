@@ -2,4 +2,4 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10681103&assignment_repo_type=AssignmentRepo)
 ## 2023 MDDN342 Assignment 2: Randomised Collections
 
-I havve got some sort of arrangement going I don't know how to just print one face instead of printing multiple on top of each other.  I hope I can get some help tomorrow before I turn it in!
+This project is called randomized collections.  This project had us make faces and allow the user to swap through these faces.  The brief also had us make things that change throughout the faces.  The things I chose to change was the mouth, eyes, facial expression, and color.  The faces are represent an emotional spectrum.  Red for angry, blue for sad, yellow for happy, green for disgusted, and orange for confident.  It also looks like a rainbow.  The arrangement that the faces are displayed in is a diagonal pattern. The diagonal pattern was chosen because it shows the emotions like a spectrum.
