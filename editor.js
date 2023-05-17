@@ -4,9 +4,10 @@
 
 const canvasWidth = 960;
 const canvasHeight = 500;
-const bg_color = [71, 222, 219];
+const bg_color = [255, 255, 255];
 let slider1, slider2, slider3, slider4, slider5;
-let slider6, slider7, slider8, slider9, slider10;
+let slider6, slider7, slider8, slider9, slider10; 
+
 let faceSelector;
 let faceGuideCheckbox;
 
@@ -27,6 +28,9 @@ function setup () {
   slider8 = createSlider(0, 100, 50);
   slider9 = createSlider(0, 100, 50);
   slider10 = createSlider(0, 100, 50);
+ 
+  
+
 
   slider1.parent('slider1Container');
   slider2.parent('slider2Container');
@@ -38,6 +42,8 @@ function setup () {
   slider8.parent('slider8Container');
   slider9.parent('slider9Container');
   slider10.parent('slider10Container');
+ 
+  
 
   faceGuideCheckbox = createCheckbox('', false);
   faceGuideCheckbox.parent('checkbox1Container');
@@ -69,6 +75,7 @@ function draw () {
   let s8 = slider8.value();
   let s9 = slider9.value();
   let s10 = slider10.value();
+  
 
   let show_face_guide = faceGuideCheckbox.checked();
 
@@ -84,11 +91,11 @@ function draw () {
 
   push();
   if (mode == '1') {
-   // draw face using values mapped from 3 sliders
-   let tilt_value = map(s1, 0, 100, -90, 90);
-   let mouth_value = map(s2, 0, 100, 0.5, 10);
-   let eye_value = int(map(s3, 0, 100, 1, 3));
-   orangeAlienFace(tilt_value, eye_value, mouth_value);
+   // draws the faces in edit mode. 
+   let FaceMode = int(map(s1, 0, 100, 0, 4));
+   
+
+   EmoFace(FaceMode);
   }
 
   if (mode == '2') {
@@ -96,7 +103,14 @@ function draw () {
      blockyFace(s1);
   }
   if (mode == '3') {
+
+    
+    
+    
+  
     simplePurpleFace();
+    
+    
   }
 
   pop();
