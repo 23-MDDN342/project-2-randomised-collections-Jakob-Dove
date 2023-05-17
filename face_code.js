@@ -53,7 +53,7 @@ function EmoFace(FaceMode, Eyechange, MouthWidth) {
     arc(ArcXval, mouthY, 8+MouthWidth, 1, 180, 360, CHORD);
 
     //eyebrows
-    stroke(Color2[FaceMode])
+    stroke(Color2[FaceMode]);
     line(3,-5, 7, -6);
     line(-3,-5, -7, -6);
 
